@@ -6,7 +6,7 @@ const initialState = {
     followers: 100,
     following: 220,
     posts: 340,
-    about: "Hola soy pepito",
+    about: "Best wines of Purmamarca 🍷",
     followedBy: ['Lauti', 'Facu', 'Ale']
 }
 

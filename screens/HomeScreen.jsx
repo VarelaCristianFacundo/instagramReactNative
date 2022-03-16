@@ -3,7 +3,7 @@ import {Text, View} from "react-native";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { setUser } from "../redux/slices/userSlice";
-
+import { StyleSheet } from "react-native";
 
 export default function HomeScreen () {
 
@@ -25,7 +25,7 @@ export default function HomeScreen () {
 
     }
     return (
-        <View>
+        <View >
             <Text>HomeScreen</Text>
             <Text>{user.username}</Text>
             <Text>{user.profilePicture}</Text>
