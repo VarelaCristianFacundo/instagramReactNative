@@ -21,10 +21,9 @@ export default function ProfileHeader() {
 
 const styles = StyleSheet.create({
     container: {
-        width: "100vw",
+        width: "100%",
         flexDirection: "row",
         justifyContent: "space-between",
-        paddingRight: "10%",
         alignItems: "center"
     },
     title: {

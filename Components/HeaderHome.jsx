@@ -26,14 +26,13 @@ export default function HeaderHome() {
 
 const styles = StyleSheet.create({
     container: {
-        width: "100vw",
+        width: "100%",
         flexDirection: "row",
         justifyContent: "space-between",
-        paddingRight: "10%",
         alignItems: "center"
     },
     logo: {
-        fontFamily: "Lobster_400Regular",
+        fontFamily: "Lobster_400Regular, cursive",
         alignItems: "center",
         fontSize: 22,
     }

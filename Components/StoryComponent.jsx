@@ -11,7 +11,7 @@ export default function StoryComponent (props){
                     <View style={{width: 60, height: 60, borderWidth: 1, borderColor: "#00000050", borderRadius: 50}}></View>
                     <Image source={{uri: props.image}} style = {styles.image}/>
                 </View>
-                <Text style={styles.text}>{props.name}</Text>
+                <Text numberOfLines={1} style={styles.text}>{props.name}</Text>
             </TouchableOpacity>
         )
     }
