@@ -10,6 +10,7 @@ import SearchScreen from "./screens/SearchScreen";
 import ProfileScreen from "./screens/ProfileScreen";
 import ProfileHeader from "./Components/ProfileHeader";
 import HeaderHome from "./Components/HeaderHome";
+import SearchHeader from "./Components/SearchHeader";
 
 const Tab = createBottomTabNavigator();
 
@@ -42,7 +43,11 @@ export default function Navigation() {
                     headerTitle: () => <HeaderHome />
                 }}
                 />
-                <Tab.Screen name="Search" component={SearchScreen} />
+                <Tab.Screen name="Search" component={SearchScreen} 
+                options={{
+                    headerTitle: () => <SearchHeader />
+                }}
+                />
                 <Tab.Screen name="Reels" component={ReelsScreen} />
                 <Tab.Screen name="Shop" component={ShopScreen} />
                 <Tab.Screen name="Profile" component={ProfileScreen}
