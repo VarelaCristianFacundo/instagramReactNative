@@ -1,10 +1,11 @@
-import React from "react";
-import {Text, View} from "react-native";
+import React, { Component } from "react";
+import { Text, View, ScrollView } from "react-native";
+import ShopComponent from "../Components/ShopComponent";
 
 export default function ShopScreen () {
     return (
-        <View>
-            <Text>ShopScreen</Text>
-        </View>
+        <ScrollView>            
+            <ShopComponent />
+        </ScrollView>
     )
 }

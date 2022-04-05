@@ -1,0 +1,32 @@
+import React from "react";
+import { View, Text, Image, StyleSheet, SafeAreaView, FlatList, Dimensions } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
+
+export default function ShopSearchButtonComponent(props) {
+
+    return (
+        <View style={styles.button}>
+            <View style ={{flexDirection:"row"}}>
+                <Ionicons name="search" size={18} color="black" style={{ marginLeft: 12 }} />
+                <Text style={styles.text}>{props.buttonName}</Text>
+            </View>
+        </View>
+    )
+}
+
+
+const styles = StyleSheet.create({
+    button: {
+        width: Dimensions.get('window').width - (Dimensions.get('window').width * 0.3),
+        height: 30,
+        borderWidth: 1,
+        borderColor: "gray",
+        marginRight: 5,
+        borderRadius: 5,
+        justifyContent: "center",
+        alignItems: "flex-start"
+    },
+    text: {
+        textAlign: "center",
+    }
+})

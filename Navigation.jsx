@@ -10,6 +10,7 @@ import ProfileScreen from "./screens/ProfileScreen";
 import ReelsScreen from "./screens/ReelsScreen";
 import SearchScreen from "./screens/SearchScreen";
 import ShopScreen from "./screens/ShopScreen";
+import ShopHeader from "./Components/ShopHeader";
 
 const Tab = createBottomTabNavigator();
 
@@ -64,7 +65,11 @@ export default function Navigation() {
                         <Feather name="camera" size={24} color="black" />
                     )
                 }} />
-                <Tab.Screen name="Shop" component={ShopScreen} />
+                <Tab.Screen name="Shop" component={ShopScreen} 
+                options={{
+                    headerTitle: () => <ShopHeader />
+                }}
+                />
                 <Tab.Screen name="Profile" component={ProfileScreen}
                     options={{
                         headerTitle: () => <ProfileHeader />
