@@ -10,19 +10,14 @@ export default function SearchHeader() {
     const user = useSelector(state => state.user)
 
     return (
-        <View>
-            <View style ={styles.container}>                
-                <SearchButtonComponent buttonName={" Search"}/>
-            </View>
+        <View style ={styles.container}>                
+            <SearchButtonComponent buttonName={" Search"}/>
         </View>
     );
 }
 
 const styles = StyleSheet.create({
     container: {
-        display: "flex",
-        width: "100%",
-        justifyContent: "flex-start",
-        alignItems: "center"
+        width: "100%"
     }
 });
