@@ -1,23 +1,29 @@
-import React from "react";
-import { NavigationContainer } from "@react-navigation/native";
+import { Feather, Ionicons } from '@expo/vector-icons';
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Ionicons } from '@expo/vector-icons';
-
+import { DefaultTheme, NavigationContainer } from "@react-navigation/native";
+import React from "react";
+import HomeHeader from "./Components/HomeHeader";
+import ProfileHeader from "./Components/ProfileHeader";
+import SearchHeader from "./Components/SearchHeader";
 import HomeScreen from "./screens/HomeScreen";
-import ShopScreen from "./screens/ShopScreen";
+import ProfileScreen from "./screens/ProfileScreen";
 import ReelsScreen from "./screens/ReelsScreen";
 import SearchScreen from "./screens/SearchScreen";
-import ProfileScreen from "./screens/ProfileScreen";
-import ProfileHeader from "./Components/ProfileHeader";
-import HomeHeader from "./Components/HomeHeader";
-import SearchHeader from "./Components/SearchHeader";
-import { Feather } from "@expo/vector-icons";
+import ShopScreen from "./screens/ShopScreen";
 
 const Tab = createBottomTabNavigator();
 
+const MyTheme = {
+    ...DefaultTheme,
+    colors: {
+        ...DefaultTheme.colors,
+        background: '#fff',
+    },
+};
+
 export default function Navigation() {
     return (
-        <NavigationContainer>
+        <NavigationContainer theme={MyTheme}>
             <Tab.Navigator
                 screenOptions={({ route }) => ({
                     tabBarIcon: ({ focused, color, size }) => {
@@ -35,25 +41,29 @@ export default function Navigation() {
                         }
                         return <Ionicons name={iconName} size={size} color={"black"} />
                     },
-                    tabBarShowLabel: false
+                    tabBarShowLabel: false,
+                    headerRightContainerStyle: {
+                        paddingRight: 10
+                    }
                 })}
             >
 
-                <Tab.Screen name="Home" component={HomeScreen} 
-                options={{
-                    headerTitle: () => <HomeHeader />
-                }}
+                <Tab.Screen name="Home" component={HomeScreen}
+                    options={{
+                        headerTitle: () => <HomeHeader />
+                    }}
                 />
-                <Tab.Screen name="Search" component={SearchScreen} 
-                options={{
-                    headerTitle: () => <SearchHeader />
-                }}
+                <Tab.Screen name="Search" component={SearchScreen}
+                    options={{
+                        headerTitle: () => <SearchHeader />
+                    }}
                 />
-                <Tab.Screen name="Reels" component={ReelsScreen} options= {{
+                <Tab.Screen name="Reels" component={ReelsScreen} options={{
                     headerTransparent: true,
                     headerRight: (props) => (
                         <Feather name="camera" size={24} color="black" />
-                    )}}/>
+                    )
+                }} />
                 <Tab.Screen name="Shop" component={ShopScreen} />
                 <Tab.Screen name="Profile" component={ProfileScreen}
                     options={{
