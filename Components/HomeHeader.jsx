@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 import { useFonts, Lobster_400Regular } from "@expo-google-fonts/lobster";
 import { FontAwesome5 } from "@expo/vector-icons";
 
-export default function HeaderHome() {
+export default function HomeHeader() {
 
     const user = useSelector(state => state.user)
     

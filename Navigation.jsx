@@ -9,8 +9,9 @@ import ReelsScreen from "./screens/ReelsScreen";
 import SearchScreen from "./screens/SearchScreen";
 import ProfileScreen from "./screens/ProfileScreen";
 import ProfileHeader from "./Components/ProfileHeader";
-import HeaderHome from "./Components/HeaderHome";
+import HomeHeader from "./Components/HomeHeader";
 import SearchHeader from "./Components/SearchHeader";
+import { Feather } from "@expo/vector-icons";
 
 const Tab = createBottomTabNavigator();
 
@@ -40,7 +41,7 @@ export default function Navigation() {
 
                 <Tab.Screen name="Home" component={HomeScreen} 
                 options={{
-                    headerTitle: () => <HeaderHome />
+                    headerTitle: () => <HomeHeader />
                 }}
                 />
                 <Tab.Screen name="Search" component={SearchScreen} 
@@ -48,7 +49,11 @@ export default function Navigation() {
                     headerTitle: () => <SearchHeader />
                 }}
                 />
-                <Tab.Screen name="Reels" component={ReelsScreen} />
+                <Tab.Screen name="Reels" component={ReelsScreen} options= {{
+                    headerTransparent: true,
+                    headerRight: (props) => (
+                        <Feather name="camera" size={24} color="black" />
+                    )}}/>
                 <Tab.Screen name="Shop" component={ShopScreen} />
                 <Tab.Screen name="Profile" component={ProfileScreen}
                     options={{

@@ -15,7 +15,7 @@ export default function ReelsComponent(props) {
                     <Image source={{ uri: props.image }} style={styles.image} />
                 </View>
 
-                <View style={{flexDirection: "column", justifyContent: "space-between", marginVertical: 350, marginLeft: 270, position:"absolute"}}>
+                <View style={{flexDirection: "column", justifyContent: "space-between", marginVertical: 370, marginLeft: 270, position:"absolute"}}>
                     <View style={{ flexDirection: "column", alignItems: "center"}}>                        
                         <AntDesign name="hearto" size={24} color="white" style={{ marginTop: 20}} />
                         <Feather name="message-circle" size={24} color="white" style={{ marginTop: 20 }} />
